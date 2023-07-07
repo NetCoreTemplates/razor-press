@@ -1,5 +1,9 @@
+using Markdig.Extensions.CustomContainers;
+using Markdig.Renderers;
+using Markdig.Renderers.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ServiceStack.IO;
+using ServiceStack.Text;
 
 [assembly: HostingStartup(typeof(MyApp.ConfigureSsg))]
 
@@ -16,27 +20,38 @@ public class ConfigureSsg : IHostingStartup
             services.AddSingleton<MarkdownPages>();
             services.AddSingleton<MarkdownWhatsNew>();
             services.AddSingleton<MarkdownVideos>();
-            services.AddSingleton<MarkdownBlog>();
             services.AddSingleton<MarkdownMeta>();
         })
         .ConfigureAppHost(
             appHost => appHost.Plugins.Add(new CleanUrlsFeature()),
             afterPluginsLoaded: appHost =>
             {
+                MarkdigConfig.Set(new MarkdigConfig
+                {
+                    ConfigurePipeline = pipeline =>
+                    {
+                        // Extend Markdig Pipeline
+                    },
+                    ConfigureContainers = config =>
+                    {
+                        config.AddBuiltInContainers();
+                        // Add Custom Block or Inline containers
+                        config.AddBlockContainer("YouTube", new YouTubeContainer());
+                        config.AddInlineContainer("YouTube", new YouTubeInlineContainer());
+                    }
+                });
+
                 var pages = appHost.Resolve<MarkdownPages>();
                 var whatsNew = appHost.Resolve<MarkdownWhatsNew>();
                 var videos = appHost.Resolve<MarkdownVideos>();
-                var blogPosts = appHost.Resolve<MarkdownBlog>();
                 var meta = appHost.Resolve<MarkdownMeta>();
 
-                blogPosts.Authors = AppConfig.Instance.Authors;
-                meta.Features = new() { pages, whatsNew, videos, blogPosts };
+                meta.Features = new() { pages, whatsNew, videos };
                 meta.Features.ForEach(x => x.VirtualFiles = appHost.VirtualFiles);
                 
                 pages.LoadFrom("_pages");
                 whatsNew.LoadFrom("_whatsnew");
                 videos.LoadFrom("_videos");
-                blogPosts.LoadFrom("_posts");
                 AppConfig.Instance.GitPagesBaseUrl ??= ResolveGitBlobBaseUrl(appHost.ContentRootDirectory);
             },
             afterAppHostInit: appHost =>
@@ -89,7 +104,6 @@ public class AppConfig
     public string LocalBaseUrl { get; set; }
     public string PublicBaseUrl { get; set; }
     public string? GitPagesBaseUrl { get; set; }
-    public List<AuthorInfo> Authors { get; set; } = new();
 }
 
 // Add additional frontmatter info to include
@@ -109,4 +123,53 @@ public static class HtmlHelpers
 
     public static string ContentUrl(this IHtmlHelper html, string? relativePath) => ToAbsoluteContentUrl(relativePath); 
     public static string ApiUrl(this IHtmlHelper html, string? relativePath) => ToAbsoluteApiUrl(relativePath);
+}
+
+// Example of implementing a custom Block Container
+public class YouTubeContainer : HtmlObjectRenderer<CustomContainer>
+{
+    protected override void Write(HtmlRenderer renderer, CustomContainer obj)
+    {
+        if (obj.Arguments == null)
+        {
+            renderer.WriteLine($"Missing YouTube Id, Usage :::{obj.Info} <id>");
+            return;
+        }
+        
+        renderer.EnsureLine();
+
+        var youtubeId = obj.Arguments!;
+        var attrs = obj.TryGetAttributes()!;
+        attrs.Classes ??= new();
+        attrs.Classes.Add("not-prose text-center");
+        
+        renderer.Write("<div").WriteAttributes(obj).Write('>');
+        renderer.WriteLine("<div class=\"text-3xl font-extrabold tracking-tight\">");
+        renderer.WriteChildren(obj);
+        renderer.WriteLine("</div>");
+        renderer.WriteLine(@$"<div class=""mt-3 flex justify-center"">
+            <lite-youtube class=""w-full mx-4 my-4"" width=""560"" height=""315"" videoid=""{youtubeId}"" 
+                style=""background-image:url('https://img.youtube.com/vi/{youtubeId}/maxresdefault.jpg')""></lite-youtube>
+            </div>
+        </div>");
+    }
+}
+
+public class YouTubeInlineContainer : HtmlObjectRenderer<CustomContainerInline>
+{
+    protected override void Write(HtmlRenderer renderer, CustomContainerInline obj)
+    {
+        var youtubeId = obj.FirstChild is Markdig.Syntax.Inlines.LiteralInline literalInline
+            ? literalInline.Content.AsSpan().RightPart(' ').ToString()
+            : null;
+        if (string.IsNullOrEmpty(youtubeId))
+        {
+            renderer.WriteLine($"Missing YouTube Id, Usage ::YouTube <id>::");
+            return;
+        }
+        renderer.WriteLine(@$"<div class=""mt-3 flex justify-center"">
+            <lite-youtube class=""w-full mx-4 my-4"" width=""560"" height=""315"" videoid=""{youtubeId}"" 
+                style=""background-image:url('https://img.youtube.com/vi/{youtubeId}/maxresdefault.jpg')""></lite-youtube>
+        </div>");
+    }
 }

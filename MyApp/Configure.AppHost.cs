@@ -13,6 +13,10 @@ public class AppHost : AppHostBase, IHostingStartup
 
     public override void Configure(Funq.Container container)
     {
+        ConfigurePlugin<NativeTypesFeature>(feature =>
+        {
+            feature.MetadataTypesConfig.ExportAttributes.Add(typeof(FieldAttribute));
+        });
     }
 }
 

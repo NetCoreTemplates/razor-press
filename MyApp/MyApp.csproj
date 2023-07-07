@@ -29,4 +29,16 @@
     <!-- Required for Razor compilation on change: https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-compilation?view=aspnetcore-5.0 -->
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.*" />
   </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\Posts\Author.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\Posts\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\Posts\Post.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\Posts\Tagged.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\Posts\Year.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\pages\" />
+  </ItemGroup>
 </Project>
