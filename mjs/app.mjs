@@ -6,7 +6,7 @@ import GettingStarted from "./components/GettingStarted.mjs"
 import ShellCommand from "./components/ShellCommand.mjs"
 import VueComponentGallery from "./components/VueComponentGallery.mjs"
 import VueComponentLibrary from "./components/VueComponentLibrary.mjs"
-import { PagingNav, FileLayout } from './components/CreatorKitDocs.mjs'
+import { PagingNav, FileLayout } from './components/Docs.mjs'
 
 let client = null, Apps = []
 let AppData = {
