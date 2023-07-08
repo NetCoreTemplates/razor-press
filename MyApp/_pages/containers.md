@@ -3,7 +3,7 @@ title: Custom Markdown Containers
 ---
 
 [Custom Containers](https://github.com/xoofx/markdig/blob/master/src/Markdig.Tests/Specs/CustomContainerSpecs.md) are a 
-popular method for implementing Markdown Extensions for enabling rich content in your Markdown documents. 
+popular method for implementing Markdown Extensions for enabling rich, wrist-friendly consistent content in your Markdown documents. 
 
 ## Built-in Containers
 
@@ -67,7 +67,7 @@ Danger zone, do not proceed
 
 ### Pre
 
-The **pre** container can be used to capture its content in a `<pre>` element instead of it's default rendering:
+The **pre** container can be used to capture its content in a `<pre>` element instead of it's default markdown rendering:
 
 ```markdown
 :::pre
@@ -77,7 +77,7 @@ The **pre** container can be used to capture its content in a `<pre>` element in
 
 ### copy
 
-The **copy** container is ideal for displaying text snippets in a component that allows easy copying:
+The **copy** container is ideal for displaying text snippets in a component that allows for easy copying:
 
 #### Input
 
@@ -111,7 +111,7 @@ HTML or XML fragments can also be copied by escaping them first:
 
 ### sh
 
-Similarly the **sh** container is ideal for displaying shell commands:
+Similarly the **sh** container is ideal for displaying and copying shell commands:
 
 #### Input
 
@@ -133,9 +133,9 @@ npm run prerender
 great way to create rich widgets that can be used directly in Markdown. 
 
 They're useful for ensuring similar content is displayed consistently across all your documentation. A good use-case for
-this could be to implement a YouTube component that standardizes how YouTube videos are embedded in documentation.
+this could be to implement a YouTube component for standardizing how YouTube videos are displayed.
 
-For this example we want to display a YouTube video using just its YouTube Id and a title for the video which we can
+For this example we want to display a YouTube video using just its YouTube **id** and a **title** for the video which we can
 capture in the Custom Container: 
 
 ```markdown
@@ -144,7 +144,7 @@ Using Razor SSG to Create Websites in GitHub Codespaces
 :::
 ```
 
-Which we can implement with a normal Markdig CustomContainer HtmlObjectRenderer:
+Which we can implement with a normal Markdig `HtmlObjectRenderer<CustomContainer>`:
 
 ```csharp
 public class YouTubeContainer : HtmlObjectRenderer<CustomContainer>
@@ -178,7 +178,7 @@ public class YouTubeContainer : HtmlObjectRenderer<CustomContainer>
 }
 ```
 
-Which can be registered in `Configure.Ssg.cs` with the name we want to use for the container:
+That should be registered in `Configure.Ssg.cs` with the name we want to use for the container:
 
 ```csharp
 MarkdigConfig.Set(new MarkdigConfig
@@ -191,7 +191,7 @@ MarkdigConfig.Set(new MarkdigConfig
 });
 ```
 
-Where it can now be used in your Markdown documentation:
+After which it can be used in your Markdown documentation:
 
 #### Input
 
@@ -215,14 +215,14 @@ and classes, e.g:
 #### Input
 
 ```markdown
-:::YouTube MRQMBrXi5Sc {#my-anchor .text-indigo-600}
+:::YouTube MRQMBrXi5Sc {.text-indigo-600}
 Using Razor SSG to Create Websites in GitHub Codespaces
 :::
 ```
 
 #### Output
 
-:::YouTube MRQMBrXi5Sc {#my-anchor .text-indigo-600}
+:::YouTube MRQMBrXi5Sc {.text-indigo-600}
 Using Razor SSG to Create Websites in GitHub Codespaces
 :::
 
@@ -235,7 +235,7 @@ a video without a title, e.g:
 ::YouTube MRQMBrXi5Sc::
 ```
 
-Inline Containers can be implemented with a Markdig CustomContainerInline HtmlObjectRenderer, e.g:
+Inline Containers can be implemented with a Markdig `HtmlObjectRenderer<CustomContainerInline>`, e.g:
 
 ```csharp
 public class YouTubeInlineContainer : HtmlObjectRenderer<CustomContainerInline>

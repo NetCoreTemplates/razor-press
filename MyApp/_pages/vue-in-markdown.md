@@ -12,9 +12,12 @@ embed interactive reactive Vue components directly in Markdown which makes it po
 
 We can embed Vue components directly in Markdown simply because all Markdown Documents are themselves Vue Apps, which by default 
 are created with the same [/mjs/app.mjs](https://github.com/NetCoreTemplates/razor-press/blob/main/MyApp/wwwroot/mjs/app.mjs)
-configuration that all Razor Pages uses, which allows using any 
-[Vue DOM syntax](https://vuejs.org/guide/essentials/template-syntax.html) or global Vue components in Markdown, in the same
-way that they're used in Vue Apps defined in Razor or HTML pages, e.g. We can display the 
+configuration that all Razor Pages uses. This allows using any 
+[Vue DOM syntax](https://vuejs.org/guide/essentials/template-syntax.html) or global Vue components directly in Markdown, in the same
+way that they're used in Vue Apps defined in Razor or HTML pages.
+
+
+For example we can display the 
 [GettingStarted.mjs](https://github.com/NetCoreTemplates/razor-press/blob/main/MyApp/wwwroot/mjs/components/GettingStarted.mjs) component
 that's on the home page with:
 
@@ -39,13 +42,13 @@ an `.mjs` extension:
 ```
 
 This is utilized by most [/pages/vue](https://github.com/NetCoreTemplates/razor-press/tree/main/MyApp/wwwroot/pages/vue)
-Markdown pages to handle the unique requirements of each page.
+Markdown pages to handle the unique requirements of each page's live examples.
 
 E.g. the [autoquerygrid.mjs](https://github.com/NetCoreTemplates/razor-press/blob/main/MyApp/wwwroot/pages/vue/autoquerygrid.mjs)
 uses a custom Vue App component that registers a custom **client** dependency and **Responsive** and **CustomBooking**
 components that are only used in 
 [/vue/autoquerygrid.md](https://github.com/NetCoreTemplates/razor-press/blob/main/MyApp/_pages/vue/autoquerygrid.md)
-page to render its interactive [/vue/autoquerygrid](/vue/autoquerygrid) live examples:
+page to render the interactive live examples in the [/vue/autoquerygrid](/vue/autoquerygrid) page:
 
 ```js
 import { onMounted } from "vue"
@@ -82,7 +85,7 @@ export default {
 ### Convert from Vue script setup
 
 This is roughly equivalent to the sample below if coming from VitePress or other npm Vue project that uses Vue's 
-compile-time syntactic [script setup](https://vuejs.org/api/sfc-script-setup.html):
+compile-time syntactic [`<script setup>`](https://vuejs.org/api/sfc-script-setup.html):
 
 ```html
 <script setup>
@@ -107,7 +110,7 @@ onMounted(async () => {
 
 ## Custom Styles in Markdown
 
-If needed custom styles can be added for individual pages by adding a `.css` file at the following location:
+If needed custom styles can also be added for individual pages by adding a `.css` file at the following location:
 
 ```
 /wwwroot/pages/<path>/<file>.css

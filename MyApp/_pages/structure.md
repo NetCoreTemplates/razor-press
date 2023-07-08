@@ -38,7 +38,7 @@ This is primarily where most Markdown documentation will be maintained.
 
 ### Document Collections
 
-Folders can be used to maintain different document collections as done in [/vue/](/vue/) and [/creatorkit/](/creatorkit/) folders: 
+Folders can be used to maintain different document collections as seen in [/vue/](/vue/) and [/creatorkit/](/creatorkit/) folders: 
 
 <file-layout :files="{
   _pages: {
@@ -47,36 +47,40 @@ Folders can be used to maintain different document collections as done in [/vue/
   }
 }" class="cursor-pointer" v-on:click="nav('https://github.com/NetCoreTemplates/razor-press/tree/main/MyApp/_pages')"></file-layout>
 
-Each documentation collection needs a Razor Page to render the documentation for that collection as done in:
+Each documentation collection needs a Razor Page to render each page in that collection, which can be configured independently
+and include additional features when needed, examples of this include:
 
 - [/Vue/Page.cshtml](https://github.com/NetCoreTemplates/razor-press/tree/main/MyApp/Pages/Vue/Page.cshtml)
 - [/CreatorKit/Page.cshtml](https://github.com/NetCoreTemplates/razor-press/tree/main/MyApp/Pages/CreatorKit/Page.cshtml)
 
-Optionally each group can have custom home pages as done in:
+They can contain custom Razor Pages as needed, e.g. both [/vue/](/and/) and [/creatorkit/](/creatorkit/) have custom index pages:
 
 - [/Vue/Index.cshtml](https://github.com/NetCoreTemplates/razor-press/tree/main/MyApp/Pages/Vue/Index.cshtml)
 - [/CreatorKit/Index.cshtml](https://github.com/NetCoreTemplates/razor-press/tree/main/MyApp/Pages/CreatorKit/Index.cshtml)
 
-Or if no custom home page is needed, a `/{slug?}` or `/{**slug}` wildcard route can be used to handle both as done in:
+If no custom home page is needed, a `/{slug?}` or `/{**slug}` wildcard route can be used to handle a collection's 
+index and content pages, e.g:
 
 - [/AutoQuery.cshtml](https://github.com/ServiceStack/docs.servicestack.net/blob/main/MyApp/Pages/AutoQuery.cshtml)
 - [/OrmLite.cshtml](https://github.com/ServiceStack/docs.servicestack.net/blob/main/MyApp/Pages/OrmLite.cshtml)
 - [/Redis.cshtml](https://github.com/ServiceStack/docs.servicestack.net/blob/main/MyApp/Pages/Redis.cshtml)
 
-To render the documentation groups:
+Which are used to render all pages in each documentation collection:
 
 - [docs2.servicestack.net/autoquery/](https://docs2.servicestack.net/autoquery/)
 - [docs2.servicestack.net/ormlite/](https://docs2.servicestack.net/ormlite/)
 - [docs2.servicestack.net/redis/](https://docs2.servicestack.net/redis/)
 
-See [Sidebars](/sidebars) for how to configure different Sidebar menus for each documentation group.
+::: tip
+See [Sidebars](/sidebars) for how to configure different Sidebar menus for each collection
+:::
 
-### Loading Pages Markdown
+### Loading Markdown Pages
 
 The code that loads the Pages feature markdown content is in [Markdown.Pages.cs](https://github.com/NetCoreTemplates/razor-press/blob/main/MyApp/Markdown.Pages.cs),
-which ultimately just loads Markdown files using the configured [Markdig](https://github.com/xoofx/markdig) pipeline in its `Pages`
-collection which is made available via its `VisiblePages` property which returns all documents in development whilst hiding
-**Draft** and content published at a **Future Date** from production builds.
+which ultimately just loads Markdown files using the configured [Markdig](https://github.com/xoofx/markdig) pipeline that 
+is made available via its `VisiblePages` property which returns all documents **during development** but hides any
+**Draft** or content published at a **Future Date** from **production builds**.
 
 ## What's New Feature
 
@@ -247,7 +251,7 @@ npm install
 This will also update the Markdown features `*.cs` implementations which is delivered as source files instead of an external
 NuGet package to enable full customization, easier debugging whilst supporting easy upgrades.
 
-If you do customize any of the `.cs` files, you'll want to exclude them from being updated by removing them from:
+If you do customize any `Markdown*.cs` files, you'll want to exclude them from being updated by removing them from:
 
 ```js
 const hostFiles = [
@@ -264,8 +268,7 @@ const hostFiles = [
 
 The included [MarkdownTagHelper.cs](https://github.com/NetCoreTemplates/razor-press/blob/main/MyApp/MarkdownTagHelper.cs) can be used
 in hybrid Razor Pages like [About.cshtml](https://github.com/NetCoreTemplates/razor-ssg/blob/main/MyApp/Pages/About.cshtml)
-to render the [https://razor-ssg.web-templates.io/about](/about) page which requires the flexibility of Razor Pages with a static content component which you
-prefer to maintain inline with Markdown.
+to render the [/about](/about) page which uses the flexibility of Razor Pages and static content component maintained with inline Markdown.
 
 The `<markdown />` tag helper renders plain HTML, which you can apply [Tailwind's @typography](https://tailwindcss.com/docs/typography-plugin)
 styles by including **typography.css** and annotating it with your preferred `prose` variant, e.g:

@@ -54,11 +54,11 @@ Custom Classes can be added to headings with the suffix:
 ```
 
 However to override the default [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin) styles applied
-to headings they'll need to included within a `.not-prose` class which can be done with:
+to headings they'll need to included within a `not-prose` class which can be done with:
 
 ```markdown
 :::{.not-prose}
-## Custom Class {.text-5xl .font-extrabold .tracking-tight}
+## Custom Class {.text-5xl .font-extrabold .tracking-tight .text-indigo-600}
 :::
 ```
 
@@ -66,16 +66,16 @@ Which generates the HTML:
 
 ```html
 <div class="not-prose">
-    <h2 id="custom-class" class="text-5xl font-extrabold tracking-tight">
+    <h2 id="custom-class" class="text-5xl font-extrabold tracking-tight text-indigo-600">
         Custom Class
     </h2>
 </div>
 ```
 
-To render it with the custom tailwind css we want:
+To render it with the custom tailwind styles we want:
 
 :::{.not-prose}
-## Custom Class {.text-5xl .font-extrabold .tracking-tight}
+## Custom Class {.text-5xl .font-extrabold .tracking-tight .text-indigo-600}
 :::
 
 ## Document Map
@@ -91,9 +91,9 @@ A Document Map is created for each Markdown document from its **Heading 2** and 
 ```
 
 Which populates the `MarkdownFileInfo.DocumentMap` collection that renders the Document Map on the right column of
-each document displayed in devices with larger resolutions that can fit them.
+each document, that's displayed in devices with larger resolutions that can fit them.
 
-The document map also makes use of the Auto heading anchors for its navigation, which is kept updated as you scroll down the page.
+The document map also makes use of the Auto heading anchors for its navigation, that's kept updated as you scroll.
 
 ## GitHub-Style Tables
 
@@ -123,7 +123,7 @@ Which can be further styled with custom classes:
 #### Input
 
 ```markdown
-:::{.table .table-striped}
+:::{.not-prose .table .table-striped}
 | Tables        |      Are      |  Cool |
 | ------------- | :-----------: | ----: |
 | col 3 is      | right-aligned | $1600 |
@@ -134,7 +134,7 @@ Which can be further styled with custom classes:
 
 #### Output
 
-:::{.table .table-striped}
+:::{.not-prose .table .table-striped}
 | Tables        |      Are      |  Cool |
 | ------------- | :-----------: | ----: |
 | col 3 is      | right-aligned | $1600 |
@@ -184,7 +184,7 @@ class A<T>
 
 ## Markdown Fragments
 
-Markdown fragments should be maintained in `_pages/_include` as it's a special folder rendered with
+Markdown fragments should be maintained in `_pages/_include` - a special folder rendered with
 [Pages/Includes.cshtml](https://github.com/NetCoreTemplates/razor-press/blob/main/MyApp/Pages/Includes.cshtml) using
 an Empty Layout which can be included in other Markdown and Razor Pages or fetched on demand with Ajax
 from [/includes/vue/formatters](/includes/vue/formatters).

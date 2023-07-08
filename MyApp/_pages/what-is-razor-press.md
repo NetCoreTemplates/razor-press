@@ -6,11 +6,11 @@ title: What is Razor Press?
 Razor Press is a Razor Pages powered Markdown alternative to Ruby's Jekyll, Vue & VitePress that's ideal for 
 generating fast, static content-centric & documentation websites. Inspired by [VitePress](https://vitepress.dev), 
 it's designed to effortlessly create documentation around content written in Markdown, rendered using C# Razor Pages
-that's beautifully rendered using [tailwindcss](https://tailwindcss.com) and [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin).
+and beautifully styled with [tailwindcss](https://tailwindcss.com) and [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin).
 
 The resulting statically generated HTML pages can easily be deployed anywhere, where it can be hosted by any HTTP Server or CDN.
 By default it includes GitHub Actions to deploy it your GitHub Repo's **gh-pages** branch where it's hosted for FREE
-on [GitHub Pages](https://pages.github.com) CDN that can be easily configured to use your 
+on [GitHub Pages](https://pages.github.com) CDN which can be easily configured to use your 
 [Custom Domain](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
 
 ## Use Cases
@@ -58,7 +58,7 @@ for documentation websites including:
  
 - Markdown Content Includes
 - Tip, Info, Warning, Danger sections
-- Shell and NuGet copy command widgets
+- Copy and Shell command widgets
 
 But given **Razor Press** and **Razor SSG** share the same implementation, their features are easily transferable, e.g.
 The [What's New](/whatsnew) and [Videos](/videos) sections are 
@@ -71,7 +71,7 @@ The source code of all Markdown and Razor Pages features are included in the tem
 implemented in the [Markdown*.cs](https://github.com/NetCoreTemplates/razor-press/tree/main/MyApp) files allowing for
 easier inspection, debugging and customization.
 
-To simplify updating Markdown features in future we recommend not modifying the included `Markdown.*` files and instead
+To simplify updating Markdown features in future we recommend against modifying the included `Markdown.*` files and instead
 add any Markdig pipeline extensions or custom containers using `MarkdigConfig` in `Configure.Ssg.cs`: 
 
 ```csharp
@@ -101,7 +101,7 @@ Which as the template has no npm dependencies, is just an alias for running `nod
 
 ## Example
 
-The largest website generated with Razor Press is currently the new ServiceStack documentation at 
+The largest website generated with Razor Press is currently the ServiceStack's documentation at 
 [docs.servicestack.net](https://docs.servicestack.net):
 
 <div class="not-prose mt-8 grid grid-cols-2 gap-4">
@@ -111,7 +111,7 @@ The largest website generated with Razor Press is currently the new ServiceStack
     </a>
 </div>
 
-A large **500+** pages documentation website ported from VitePress, which prompted the creation of Razor Press after 
+A **500+** pages documentation website ported from VitePress, which prompted the creation of Razor Press after 
 experiencing issues with VitePress's SSR/SPA model whose workaround became too time consuming to maintain. 
 
 The new Razor SSG implementation now benefits from Razor Pages flexible layouts and partials where pages can be optionally 

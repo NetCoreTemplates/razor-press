@@ -83,12 +83,12 @@ In this case it returns a Page Model for every **Visible** markdown page in
 ### Limitations
 
 The primary limitations for developing statically generated Apps is that a **snapshot** of entire App is generated at deployment,
-which prohibits being able to render different content **per request**, e.g. for Authenticated users which would require executing
-custom JavaScript after the page loads to dynamically alter the page's initial content.
+which prohibits being able to render different content **per request**, e.g. for Authenticated users which would instead require 
+executing custom JavaScript after the page loads to dynamically alter the page's initial content.
 
 Otherwise in practice you'll be able develop your Razor Pages utilizing Razor's full feature-set, the primary concessions stem
 from Pages being executed in a static context which prohibits pages from returning dynamic content per request, instead any
-"different views" should be maintained in separate pages.
+**"different views"** should be maintained in separate pages.
 
 #### No QueryString Params
 
@@ -152,7 +152,7 @@ Which lists all posts published in a specific year, e.g:
 [/posts/year/2023](https://razor-ssg.web-templates.io/posts/year/2023).
 
 Conceivably these "different views" could've been implemented by the same page with different `?author`, `?tag` and `?year`
-QueryString params, but are instead extracted into different pages to support its statically generated `*.html` outputs.
+QueryString params, but need to instead be extracted into different pages to support its statically generated `*.html` outputs.
 
 ## Prerendering Task
 
