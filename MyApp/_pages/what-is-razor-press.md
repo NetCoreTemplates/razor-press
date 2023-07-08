@@ -111,11 +111,11 @@ The largest website generated with Razor Press is currently the ServiceStack's d
     </a>
 </div>
 
-A **500+** pages documentation website ported from VitePress, which prompted the creation of Razor Press after 
-experiencing issues with VitePress's SSR/SPA model whose workaround became too time consuming to maintain. 
+A **500+** pages documentation website ported from VitePress, which prompted the creation of Razor Press after
+experiencing issues with VitePress's SSR/SPA model whose workaround became too time consuming to maintain.
 
-The new Razor SSG implementation now benefits from Razor Pages flexible layouts and partials where pages can be optionally 
-implemented in just markdown, Razor or a hybrid mix of both. The [Vue](/vue/) splash page is an example of this implemented in a custom 
+The new Razor SSG implementation now benefits from Razor Pages flexible layouts and partials where pages can be optionally
+implemented in just markdown, Razor or a hybrid mix of both. The [Vue](/vue/) splash page is an example of this implemented in a custom
 [/Vue/Index.cshtml](https://github.com/NetCoreTemplates/razor-press/blob/main/MyApp/Pages/Vue/Index.cshtml) Razor Page.
 
 <div class="not-prose mt-8 grid grid-cols-2 gap-4">
