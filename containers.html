@@ -215,7 +215,7 @@ Introduction                                    </span>
 
                 <div class="content">
                     <p><a href="https://github.com/xoofx/markdig/blob/master/src/Markdig.Tests/Specs/CustomContainerSpecs.md">Custom Containers</a> are a
-popular method for implementing Markdown Extensions for enabling rich content in your Markdown documents.</p>
+popular method for implementing Markdown Extensions for enabling rich, wrist-friendly consistent content in your Markdown documents.</p>
 <h2 id="built-in-containers">Built-in Containers<a class="header-anchor" href="javascript:;" onclick="location.hash='#built-in-containers'" aria-label="Permalink">&ZeroWidthSpace;</a></h2>
 <p>Most of <a href="https://vitepress.dev/guide/markdown#custom-containers">VitePress Containers</a> are also implemented in Razor Press, e.g:</p>
 <h4 id="input">Input<a class="header-anchor" href="javascript:;" onclick="location.hash='#input'" aria-label="Permalink">&ZeroWidthSpace;</a></h4>
@@ -260,13 +260,13 @@ Danger zone, do not proceed
                 <p class="custom-block-title">STOP</p><p>Danger zone, do not proceed</p>
 </div>
 <h3 id="pre">Pre<a class="header-anchor" href="javascript:;" onclick="location.hash='#pre'" aria-label="Permalink">&ZeroWidthSpace;</a></h3>
-<p>The <strong>pre</strong> container can be used to capture its content in a <code>&lt;pre&gt;</code> element instead of it's default rendering:</p>
+<p>The <strong>pre</strong> container can be used to capture its content in a <code>&lt;pre&gt;</code> element instead of it's default markdown rendering:</p>
 <pre><code class="language-markdown">:::pre
 ...
 :::
 </code></pre>
 <h3 id="copy">copy<a class="header-anchor" href="javascript:;" onclick="location.hash='#copy'" aria-label="Permalink">&ZeroWidthSpace;</a></h3>
-<p>The <strong>copy</strong> container is ideal for displaying text snippets in a component that allows easy copying:</p>
+<p>The <strong>copy</strong> container is ideal for displaying text snippets in a component that allows for easy copying:</p>
 <h4 id="input-2">Input<a class="header-anchor" href="javascript:;" onclick="location.hash='#input-2'" aria-label="Permalink">&ZeroWidthSpace;</a></h4>
 <pre><code class="language-markdown">:::copy
 Copy Me!
@@ -309,7 +309,7 @@ Copy Me!
                 </div>
             </div>
 <h3 id="sh">sh<a class="header-anchor" href="javascript:;" onclick="location.hash='#sh'" aria-label="Permalink">&ZeroWidthSpace;</a></h3>
-<p>Similarly the <strong>sh</strong> container is ideal for displaying shell commands:</p>
+<p>Similarly the <strong>sh</strong> container is ideal for displaying and copying shell commands:</p>
 <h4 id="input-4">Input<a class="header-anchor" href="javascript:;" onclick="location.hash='#input-4'" aria-label="Permalink">&ZeroWidthSpace;</a></h4>
 <pre><code class="language-markdown">:::sh
 npm run prerender
@@ -334,14 +334,14 @@ npm run prerender
 <p><a href="https://github.com/xoofx/markdig/blob/master/src/Markdig.Tests/Specs/CustomContainerSpecs.md">Markdig Containers</a> are a
 great way to create rich widgets that can be used directly in Markdown.</p>
 <p>They're useful for ensuring similar content is displayed consistently across all your documentation. A good use-case for
-this could be to implement a YouTube component that standardizes how YouTube videos are embedded in documentation.</p>
-<p>For this example we want to display a YouTube video using just its YouTube Id and a title for the video which we can
+this could be to implement a YouTube component for standardizing how YouTube videos are displayed.</p>
+<p>For this example we want to display a YouTube video using just its YouTube <strong>id</strong> and a <strong>title</strong> for the video which we can
 capture in the Custom Container:</p>
 <pre><code class="language-markdown">:::YouTube MRQMBrXi5Sc
 Using Razor SSG to Create Websites in GitHub Codespaces
 :::
 </code></pre>
-<p>Which we can implement with a normal Markdig CustomContainer HtmlObjectRenderer:</p>
+<p>Which we can implement with a normal Markdig <code>HtmlObjectRenderer&lt;CustomContainer&gt;</code>:</p>
 <pre><code class="language-csharp">public class YouTubeContainer : HtmlObjectRenderer&lt;CustomContainer&gt;
 {
     protected override void Write(HtmlRenderer renderer, CustomContainer obj)
@@ -372,7 +372,7 @@ Using Razor SSG to Create Websites in GitHub Codespaces
     }
 }
 </code></pre>
-<p>Which can be registered in <code>Configure.Ssg.cs</code> with the name we want to use for the container:</p>
+<p>That should be registered in <code>Configure.Ssg.cs</code> with the name we want to use for the container:</p>
 <pre><code class="language-csharp">MarkdigConfig.Set(new MarkdigConfig
 {
     ConfigureContainers = config =&gt;
@@ -382,7 +382,7 @@ Using Razor SSG to Create Websites in GitHub Codespaces
     }
 });
 </code></pre>
-<p>Where it can now be used in your Markdown documentation:</p>
+<p>After which it can be used in your Markdown documentation:</p>
 <h4 id="input-5">Input<a class="header-anchor" href="javascript:;" onclick="location.hash='#input-5'" aria-label="Permalink">&ZeroWidthSpace;</a></h4>
 <pre><code class="language-markdown">:::YouTube MRQMBrXi5Sc
 Using Razor SSG to Create Websites in GitHub Codespaces
@@ -401,12 +401,12 @@ Using Razor SSG to Create Websites in GitHub Codespaces
 <p>Since we use <code>WriteAttributes(obj)</code> to emit any attributes we're also able to customize the widget to use a custom <strong>id</strong>
 and classes, e.g:</p>
 <h4 id="input-6">Input<a class="header-anchor" href="javascript:;" onclick="location.hash='#input-6'" aria-label="Permalink">&ZeroWidthSpace;</a></h4>
-<pre><code class="language-markdown">:::YouTube MRQMBrXi5Sc {#my-anchor .text-indigo-600}
+<pre><code class="language-markdown">:::YouTube MRQMBrXi5Sc {.text-indigo-600}
 Using Razor SSG to Create Websites in GitHub Codespaces
 :::
 </code></pre>
 <h4 id="output-6">Output<a class="header-anchor" href="javascript:;" onclick="location.hash='#output-6'" aria-label="Permalink">&ZeroWidthSpace;</a></h4>
-<div id="my-anchor" class="text-indigo-600 YouTube not-prose text-center"><div class="text-3xl font-extrabold tracking-tight">
+<div class="text-indigo-600 YouTube not-prose text-center"><div class="text-3xl font-extrabold tracking-tight">
 <p>Using Razor SSG to Create Websites in GitHub Codespaces</p>
 </div>
 <div class="mt-3 flex justify-center">
@@ -419,7 +419,7 @@ Using Razor SSG to Create Websites in GitHub Codespaces
 a video without a title, e.g:</p>
 <pre><code class="language-markdown">::YouTube MRQMBrXi5Sc::
 </code></pre>
-<p>Inline Containers can be implemented with a Markdig CustomContainerInline HtmlObjectRenderer, e.g:</p>
+<p>Inline Containers can be implemented with a Markdig <code>HtmlObjectRenderer&lt;CustomContainerInline&gt;</code>, e.g:</p>
 <pre><code class="language-csharp">public class YouTubeInlineContainer : HtmlObjectRenderer&lt;CustomContainerInline&gt;
 {
     protected override void Write(HtmlRenderer renderer, CustomContainerInline obj)

@@ -249,20 +249,20 @@ Header text.</p>
 ### Custom Classes {#my-anchor .my-class .my-class2}
 </code></pre>
 <p>However to override the default <a href="https://tailwindcss.com/docs/typography-plugin">@tailwindcss/typography</a> styles applied
-to headings they'll need to included within a <code>.not-prose</code> class which can be done with:</p>
+to headings they'll need to included within a <code>not-prose</code> class which can be done with:</p>
 <pre><code class="language-markdown">:::{.not-prose}
-## Custom Class {.text-5xl .font-extrabold .tracking-tight}
+## Custom Class {.text-5xl .font-extrabold .tracking-tight .text-indigo-600}
 :::
 </code></pre>
 <p>Which generates the HTML:</p>
 <pre><code class="language-html">&lt;div class=&quot;not-prose&quot;&gt;
-    &lt;h2 id=&quot;custom-class&quot; class=&quot;text-5xl font-extrabold tracking-tight&quot;&gt;
+    &lt;h2 id=&quot;custom-class&quot; class=&quot;text-5xl font-extrabold tracking-tight text-indigo-600&quot;&gt;
         Custom Class
     &lt;/h2&gt;
 &lt;/div&gt;
 </code></pre>
-<p>To render it with the custom tailwind css we want:</p>
-<div class="not-prose"><h2 id="custom-class" class="text-5xl font-extrabold tracking-tight">Custom Class<a class="header-anchor" href="javascript:;" onclick="location.hash='#custom-class'" aria-label="Permalink">&ZeroWidthSpace;</a></h2>
+<p>To render it with the custom tailwind styles we want:</p>
+<div class="not-prose"><h2 id="custom-class" class="text-5xl font-extrabold tracking-tight text-indigo-600">Custom Class<a class="header-anchor" href="javascript:;" onclick="location.hash='#custom-class'" aria-label="Permalink">&ZeroWidthSpace;</a></h2>
 </div>
 <h2 id="document-map">Document Map<a class="header-anchor" href="javascript:;" onclick="location.hash='#document-map'" aria-label="Permalink">&ZeroWidthSpace;</a></h2>
 <p>A Document Map is created for each Markdown document from its <strong>Heading 2</strong> and <strong>Heading 3</strong> headings, e.g:</p>
@@ -273,8 +273,8 @@ to headings they'll need to included within a <code>.not-prose</code> class whic
 ## Heading 2a
 </code></pre>
 <p>Which populates the <code>MarkdownFileInfo.DocumentMap</code> collection that renders the Document Map on the right column of
-each document displayed in devices with larger resolutions that can fit them.</p>
-<p>The document map also makes use of the Auto heading anchors for its navigation, which is kept updated as you scroll down the page.</p>
+each document, that's displayed in devices with larger resolutions that can fit them.</p>
+<p>The document map also makes use of the Auto heading anchors for its navigation, that's kept updated as you scroll.</p>
 <h2 id="github-style-tables">GitHub-Style Tables<a class="header-anchor" href="javascript:;" onclick="location.hash='#github-style-tables'" aria-label="Permalink">&ZeroWidthSpace;</a></h2>
 <p>Many <a href="https://github.github.com/gfm/">GitHub Flavored Markdown</a> syntax is also supported in Markdig like their ASCII
 <a href="https://github.github.com/gfm/#tables-extension-">Tables</a>, e.g:</p>
@@ -314,7 +314,7 @@ each document displayed in devices with larger resolutions that can fit them.</p
 </table>
 <p>Which can be further styled with custom classes:</p>
 <h4 id="input-1">Input<a class="header-anchor" href="javascript:;" onclick="location.hash='#input-1'" aria-label="Permalink">&ZeroWidthSpace;</a></h4>
-<pre><code class="language-markdown">:::{.table .table-striped}
+<pre><code class="language-markdown">:::{.not-prose .table .table-striped}
 | Tables        |      Are      |  Cool |
 | ------------- | :-----------: | ----: |
 | col 3 is      | right-aligned | $1600 |
@@ -323,7 +323,7 @@ each document displayed in devices with larger resolutions that can fit them.</p
 :::
 </code></pre>
 <h4 id="output-1">Output<a class="header-anchor" href="javascript:;" onclick="location.hash='#output-1'" aria-label="Permalink">&ZeroWidthSpace;</a></h4>
-<div class="table table-striped">
+<div class="not-prose table table-striped">
 <table>
 <thead>
 <tr>
@@ -378,7 +378,7 @@ class A&lt;T&gt;
 <pre><code class="language-json">{ &quot;A&quot;: 1, &quot;B&quot;: true }
 </code></pre>
 <h2 id="markdown-fragments">Markdown Fragments<a class="header-anchor" href="javascript:;" onclick="location.hash='#markdown-fragments'" aria-label="Permalink">&ZeroWidthSpace;</a></h2>
-<p>Markdown fragments should be maintained in <code>_pages/_include</code> as it's a special folder rendered with
+<p>Markdown fragments should be maintained in <code>_pages/_include</code> - a special folder rendered with
 <a href="https://github.com/NetCoreTemplates/razor-press/blob/main/MyApp/Pages/Includes.cshtml">Pages/Includes.cshtml</a> using
 an Empty Layout which can be included in other Markdown and Razor Pages or fetched on demand with Ajax
 from <a href="/includes/vue/formatters">/includes/vue/formatters</a>.</p>

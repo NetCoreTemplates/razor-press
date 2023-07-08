@@ -294,11 +294,11 @@ as done in <a href="https://github.com/NetCoreTemplates/razor-press/blob/main/My
 </ul>
 <h3 id="limitations">Limitations<a class="header-anchor" href="javascript:;" onclick="location.hash='#limitations'" aria-label="Permalink">&ZeroWidthSpace;</a></h3>
 <p>The primary limitations for developing statically generated Apps is that a <strong>snapshot</strong> of entire App is generated at deployment,
-which prohibits being able to render different content <strong>per request</strong>, e.g. for Authenticated users which would require executing
-custom JavaScript after the page loads to dynamically alter the page's initial content.</p>
+which prohibits being able to render different content <strong>per request</strong>, e.g. for Authenticated users which would instead require
+executing custom JavaScript after the page loads to dynamically alter the page's initial content.</p>
 <p>Otherwise in practice you'll be able develop your Razor Pages utilizing Razor's full feature-set, the primary concessions stem
 from Pages being executed in a static context which prohibits pages from returning dynamic content per request, instead any
-&quot;different views&quot; should be maintained in separate pages.</p>
+<strong>&quot;different views&quot;</strong> should be maintained in separate pages.</p>
 <h4 id="no-querystring-params">No QueryString Params<a class="header-anchor" href="javascript:;" onclick="location.hash='#no-querystring-params'" aria-label="Permalink">&ZeroWidthSpace;</a></h4>
 <p>As the generated pages should adopt the same routes as your Razor Pages you'll need to avoid relying on <strong>?QueryString</strong> params
 and instead capture all required parameters for a page in its <strong>@page route</strong> as done for:</p>
@@ -347,7 +347,7 @@ likewise required for:</p>
 <p>Which lists all posts published in a specific year, e.g:
 <a href="https://razor-ssg.web-templates.io/posts/year/2023">/posts/year/2023</a>.</p>
 <p>Conceivably these &quot;different views&quot; could've been implemented by the same page with different <code>?author</code>, <code>?tag</code> and <code>?year</code>
-QueryString params, but are instead extracted into different pages to support its statically generated <code>*.html</code> outputs.</p>
+QueryString params, but need to instead be extracted into different pages to support its statically generated <code>*.html</code> outputs.</p>
 <h2 id="prerendering-task">Prerendering Task<a class="header-anchor" href="javascript:;" onclick="location.hash='#prerendering-task'" aria-label="Permalink">&ZeroWidthSpace;</a></h2>
 <p>The <strong>prerender</strong> <a href="https://docs.servicestack.net/app-tasks">AppTask</a> that pre-renders the entire website is also registered in
 <a href="https://github.com/NetCoreTemplates/razor-press/blob/main/MyApp/Configure.Ssg.cs">Configure.Ssg.cs</a>:</p>

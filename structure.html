@@ -260,41 +260,45 @@ _: ['what-is-razor-press.md','structure.md','privacy.md'],
 </ul>
 <p>This is primarily where most Markdown documentation will be maintained.</p>
 <h3 id="document-collections">Document Collections<a class="header-anchor" href="javascript:;" onclick="location.hash='#document-collections'" aria-label="Permalink">&ZeroWidthSpace;</a></h3>
-<p>Folders can be used to maintain different document collections as done in <a href="/vue/">/vue/</a> and <a href="/creatorkit/">/creatorkit/</a> folders:</p>
+<p>Folders can be used to maintain different document collections as seen in <a href="/vue/">/vue/</a> and <a href="/creatorkit/">/creatorkit/</a> folders:</p>
 <p><file-layout :files="{
 _pages: {
 creatorkit: { _: ['about.md','components.md','customize.md'], },
 vue:        { _: ['alerts.md','autocomplete.md','autoform.md'], },
 }
 }" class="cursor-pointer" v-on:click="nav('https://github.com/NetCoreTemplates/razor-press/tree/main/MyApp/_pages')"></file-layout></p>
-<p>Each documentation collection needs a Razor Page to render the documentation for that collection as done in:</p>
+<p>Each documentation collection needs a Razor Page to render each page in that collection, which can be configured independently
+and include additional features when needed, examples of this include:</p>
 <ul>
 <li><a href="https://github.com/NetCoreTemplates/razor-press/tree/main/MyApp/Pages/Vue/Page.cshtml">/Vue/Page.cshtml</a></li>
 <li><a href="https://github.com/NetCoreTemplates/razor-press/tree/main/MyApp/Pages/CreatorKit/Page.cshtml">/CreatorKit/Page.cshtml</a></li>
 </ul>
-<p>Optionally each group can have custom home pages as done in:</p>
+<p>They can contain custom Razor Pages as needed, e.g. both <a href="/and/">/vue/</a> and <a href="/creatorkit/">/creatorkit/</a> have custom index pages:</p>
 <ul>
 <li><a href="https://github.com/NetCoreTemplates/razor-press/tree/main/MyApp/Pages/Vue/Index.cshtml">/Vue/Index.cshtml</a></li>
 <li><a href="https://github.com/NetCoreTemplates/razor-press/tree/main/MyApp/Pages/CreatorKit/Index.cshtml">/CreatorKit/Index.cshtml</a></li>
 </ul>
-<p>Or if no custom home page is needed, a <code>/{slug?}</code> or <code>/{**slug}</code> wildcard route can be used to handle both as done in:</p>
+<p>If no custom home page is needed, a <code>/{slug?}</code> or <code>/{**slug}</code> wildcard route can be used to handle a collection's
+index and content pages, e.g:</p>
 <ul>
 <li><a href="https://github.com/ServiceStack/docs.servicestack.net/blob/main/MyApp/Pages/AutoQuery.cshtml">/AutoQuery.cshtml</a></li>
 <li><a href="https://github.com/ServiceStack/docs.servicestack.net/blob/main/MyApp/Pages/OrmLite.cshtml">/OrmLite.cshtml</a></li>
 <li><a href="https://github.com/ServiceStack/docs.servicestack.net/blob/main/MyApp/Pages/Redis.cshtml">/Redis.cshtml</a></li>
 </ul>
-<p>To render the documentation groups:</p>
+<p>Which are used to render all pages in each documentation collection:</p>
 <ul>
 <li><a href="https://docs2.servicestack.net/autoquery/">docs2.servicestack.net/autoquery/</a></li>
 <li><a href="https://docs2.servicestack.net/ormlite/">docs2.servicestack.net/ormlite/</a></li>
 <li><a href="https://docs2.servicestack.net/redis/">docs2.servicestack.net/redis/</a></li>
 </ul>
-<p>See <a href="/sidebars">Sidebars</a> for how to configure different Sidebar menus for each documentation group.</p>
-<h3 id="loading-pages-markdown">Loading Pages Markdown<a class="header-anchor" href="javascript:;" onclick="location.hash='#loading-pages-markdown'" aria-label="Permalink">&ZeroWidthSpace;</a></h3>
+<div class="tip custom-block">
+                <p class="custom-block-title">TIP</p><p>See <a href="/sidebars">Sidebars</a> for how to configure different Sidebar menus for each collection</p>
+</div>
+<h3 id="loading-markdown-pages">Loading Markdown Pages<a class="header-anchor" href="javascript:;" onclick="location.hash='#loading-markdown-pages'" aria-label="Permalink">&ZeroWidthSpace;</a></h3>
 <p>The code that loads the Pages feature markdown content is in <a href="https://github.com/NetCoreTemplates/razor-press/blob/main/MyApp/Markdown.Pages.cs">Markdown.Pages.cs</a>,
-which ultimately just loads Markdown files using the configured <a href="https://github.com/xoofx/markdig">Markdig</a> pipeline in its <code>Pages</code>
-collection which is made available via its <code>VisiblePages</code> property which returns all documents in development whilst hiding
-<strong>Draft</strong> and content published at a <strong>Future Date</strong> from production builds.</p>
+which ultimately just loads Markdown files using the configured <a href="https://github.com/xoofx/markdig">Markdig</a> pipeline that
+is made available via its <code>VisiblePages</code> property which returns all documents <strong>during development</strong> but hides any
+<strong>Draft</strong> or content published at a <strong>Future Date</strong> from <strong>production builds</strong>.</p>
 <h2 id="whats-new-feature">What's New Feature<a class="header-anchor" href="javascript:;" onclick="location.hash='#whats-new-feature'" aria-label="Permalink">&ZeroWidthSpace;</a></h2>
 <p>The <a href="/whatsnew">/whatsnew</a> page is an example of creating a custom Markdown feature to implement a portfolio or a product releases page
 where a new folder is created per release, containing both release date and release or project name, with all features in that release
@@ -444,7 +448,7 @@ values into native .NET types.</p>
             </div>
 <p>This will also update the Markdown features <code>*.cs</code> implementations which is delivered as source files instead of an external
 NuGet package to enable full customization, easier debugging whilst supporting easy upgrades.</p>
-<p>If you do customize any of the <code>.cs</code> files, you'll want to exclude them from being updated by removing them from:</p>
+<p>If you do customize any <code>Markdown*.cs</code> files, you'll want to exclude them from being updated by removing them from:</p>
 <pre><code class="language-js">const hostFiles = [
   'Markdown.Meta.cs',
   'Markdown.Pages.cs',
@@ -457,8 +461,7 @@ NuGet package to enable full customization, easier debugging whilst supporting e
 <h2 id="markdown-tag-helper">Markdown Tag Helper<a class="header-anchor" href="javascript:;" onclick="location.hash='#markdown-tag-helper'" aria-label="Permalink">&ZeroWidthSpace;</a></h2>
 <p>The included <a href="https://github.com/NetCoreTemplates/razor-press/blob/main/MyApp/MarkdownTagHelper.cs">MarkdownTagHelper.cs</a> can be used
 in hybrid Razor Pages like <a href="https://github.com/NetCoreTemplates/razor-ssg/blob/main/MyApp/Pages/About.cshtml">About.cshtml</a>
-to render the <a href="/about">https://razor-ssg.web-templates.io/about</a> page which requires the flexibility of Razor Pages with a static content component which you
-prefer to maintain inline with Markdown.</p>
+to render the <a href="/about">/about</a> page which uses the flexibility of Razor Pages and static content component maintained with inline Markdown.</p>
 <p>The <code>&lt;markdown /&gt;</code> tag helper renders plain HTML, which you can apply <a href="https://tailwindcss.com/docs/typography-plugin">Tailwind's @typography</a>
 styles by including <strong>typography.css</strong> and annotating it with your preferred <code>prose</code> variant, e.g:</p>
 <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/typography.css&quot;&gt;
@@ -520,10 +523,10 @@ styles by including <strong>typography.css</strong> and annotating it with your 
                                                             Document Collections
                                                         </span>
                                                     </li>
-                                                    <li data-id="loading-pages-markdown" class="text-gray-500 hover:text-gray-900">
-                                                        <span v-hash="'#loading-pages-markdown'" class="cursor-pointer flex text-sm transform transition-colors duration-200 py-2">
+                                                    <li data-id="loading-markdown-pages" class="text-gray-500 hover:text-gray-900">
+                                                        <span v-hash="'#loading-markdown-pages'" class="cursor-pointer flex text-sm transform transition-colors duration-200 py-2">
                                                             <svg width="3" height="24" viewBox="0 -9 3 24" class="mr-2 overflow-visible"><path d="M0 0L3 3L0 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
-                                                            Loading Pages Markdown
+                                                            Loading Markdown Pages
                                                         </span>
                                                     </li>
                                             </ul>

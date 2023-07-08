@@ -221,9 +221,10 @@ embed interactive reactive Vue components directly in Markdown which makes it po
 <h2 id="markdown-documents-are-vue-apps">Markdown Documents are Vue Apps<a class="header-anchor" href="javascript:;" onclick="location.hash='#markdown-documents-are-vue-apps'" aria-label="Permalink">&ZeroWidthSpace;</a></h2>
 <p>We can embed Vue components directly in Markdown simply because all Markdown Documents are themselves Vue Apps, which by default
 are created with the same <a href="https://github.com/NetCoreTemplates/razor-press/blob/main/MyApp/wwwroot/mjs/app.mjs">/mjs/app.mjs</a>
-configuration that all Razor Pages uses, which allows using any
-<a href="https://vuejs.org/guide/essentials/template-syntax.html">Vue DOM syntax</a> or global Vue components in Markdown, in the same
-way that they're used in Vue Apps defined in Razor or HTML pages, e.g. We can display the
+configuration that all Razor Pages uses. This allows using any
+<a href="https://vuejs.org/guide/essentials/template-syntax.html">Vue DOM syntax</a> or global Vue components directly in Markdown, in the same
+way that they're used in Vue Apps defined in Razor or HTML pages.</p>
+<p>For example we can display the
 <a href="https://github.com/NetCoreTemplates/razor-press/blob/main/MyApp/wwwroot/mjs/components/GettingStarted.mjs">GettingStarted.mjs</a> component
 that's on the home page with:</p>
 <h4 id="input">Input<a class="header-anchor" href="javascript:;" onclick="location.hash='#input'" aria-label="Permalink">&ZeroWidthSpace;</a></h4>
@@ -238,12 +239,12 @@ an <code>.mjs</code> extension:</p>
 <pre><code>/wwwroot/pages/&lt;path&gt;/&lt;file&gt;.mjs
 </code></pre>
 <p>This is utilized by most <a href="https://github.com/NetCoreTemplates/razor-press/tree/main/MyApp/wwwroot/pages/vue">/pages/vue</a>
-Markdown pages to handle the unique requirements of each page.</p>
+Markdown pages to handle the unique requirements of each page's live examples.</p>
 <p>E.g. the <a href="https://github.com/NetCoreTemplates/razor-press/blob/main/MyApp/wwwroot/pages/vue/autoquerygrid.mjs">autoquerygrid.mjs</a>
 uses a custom Vue App component that registers a custom <strong>client</strong> dependency and <strong>Responsive</strong> and <strong>CustomBooking</strong>
 components that are only used in
 <a href="https://github.com/NetCoreTemplates/razor-press/blob/main/MyApp/_pages/vue/autoquerygrid.md">/vue/autoquerygrid.md</a>
-page to render its interactive <a href="/vue/autoquerygrid">/vue/autoquerygrid</a> live examples:</p>
+page to render the interactive live examples in the <a href="/vue/autoquerygrid">/vue/autoquerygrid</a> page:</p>
 <pre><code class="language-js">import { onMounted } from &quot;vue&quot;
 import { Authenticate } from &quot;./dtos.mjs&quot;
 import { useAuth, useClient } from '@servicestack/vue'
@@ -276,7 +277,7 @@ export default {
 </code></pre>
 <h3 id="convert-from-vue-script-setup">Convert from Vue script setup<a class="header-anchor" href="javascript:;" onclick="location.hash='#convert-from-vue-script-setup'" aria-label="Permalink">&ZeroWidthSpace;</a></h3>
 <p>This is roughly equivalent to the sample below if coming from VitePress or other npm Vue project that uses Vue's
-compile-time syntactic <a href="https://vuejs.org/api/sfc-script-setup.html">script setup</a>:</p>
+compile-time syntactic <a href="https://vuejs.org/api/sfc-script-setup.html"><code>&lt;script setup&gt;</code></a>:</p>
 <pre><code class="language-html">&lt;script setup&gt;
 import { onMounted } from &quot;vue&quot;
 import { Authenticate } from &quot;./dtos.ts&quot;
@@ -297,7 +298,7 @@ onMounted(async () =&gt; {
 &lt;/script&gt;
 </code></pre>
 <h2 id="custom-styles-in-markdown">Custom Styles in Markdown<a class="header-anchor" href="javascript:;" onclick="location.hash='#custom-styles-in-markdown'" aria-label="Permalink">&ZeroWidthSpace;</a></h2>
-<p>If needed custom styles can be added for individual pages by adding a <code>.css</code> file at the following location:</p>
+<p>If needed custom styles can also be added for individual pages by adding a <code>.css</code> file at the following location:</p>
 <pre><code>/wwwroot/pages/&lt;path&gt;/&lt;file&gt;.css
 </code></pre>
 

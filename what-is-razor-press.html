@@ -217,10 +217,10 @@ Introduction                                    </span>
                     <p>Razor Press is a Razor Pages powered Markdown alternative to Ruby's Jekyll, Vue &amp; VitePress that's ideal for
 generating fast, static content-centric &amp; documentation websites. Inspired by <a href="https://vitepress.dev">VitePress</a>,
 it's designed to effortlessly create documentation around content written in Markdown, rendered using C# Razor Pages
-that's beautifully rendered using <a href="https://tailwindcss.com">tailwindcss</a> and <a href="https://tailwindcss.com/docs/typography-plugin">@tailwindcss/typography</a>.</p>
+and beautifully styled with <a href="https://tailwindcss.com">tailwindcss</a> and <a href="https://tailwindcss.com/docs/typography-plugin">@tailwindcss/typography</a>.</p>
 <p>The resulting statically generated HTML pages can easily be deployed anywhere, where it can be hosted by any HTTP Server or CDN.
 By default it includes GitHub Actions to deploy it your GitHub Repo's <strong>gh-pages</strong> branch where it's hosted for FREE
-on <a href="https://pages.github.com">GitHub Pages</a> CDN that can be easily configured to use your
+on <a href="https://pages.github.com">GitHub Pages</a> CDN which can be easily configured to use your
 <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site">Custom Domain</a>.</p>
 <h2 id="use-cases">Use Cases<a class="header-anchor" href="javascript:;" onclick="location.hash='#use-cases'" aria-label="Permalink">&ZeroWidthSpace;</a></h2>
 <p>Razor Press utilizes the same technology as
@@ -262,7 +262,7 @@ for documentation websites including:</p>
 <ul>
 <li>Markdown Content Includes</li>
 <li>Tip, Info, Warning, Danger sections</li>
-<li>Shell and NuGet copy command widgets</li>
+<li>Copy and Shell command widgets</li>
 </ul>
 <p>But given <strong>Razor Press</strong> and <strong>Razor SSG</strong> share the same implementation, their features are easily transferable, e.g.
 The <a href="/whatsnew">What's New</a> and <a href="/videos">Videos</a> sections are
@@ -272,7 +272,7 @@ useful in Documentation websites.</p>
 <p>The source code of all Markdown and Razor Pages features are included in the template with all Markdown extensions
 implemented in the <a href="https://github.com/NetCoreTemplates/razor-press/tree/main/MyApp">Markdown*.cs</a> files allowing for
 easier inspection, debugging and customization.</p>
-<p>To simplify updating Markdown features in future we recommend not modifying the included <code>Markdown.*</code> files and instead
+<p>To simplify updating Markdown features in future we recommend against modifying the included <code>Markdown.*</code> files and instead
 add any Markdig pipeline extensions or custom containers using <code>MarkdigConfig</code> in <code>Configure.Ssg.cs</code>:</p>
 <pre><code class="language-csharp">MarkdigConfig.Set(new MarkdigConfig
 {
@@ -305,7 +305,7 @@ add any Markdig pipeline extensions or custom containers using <code>MarkdigConf
             </div>
 <p>Which as the template has no npm dependencies, is just an alias for running <code>node postinstall.js</code></p>
 <h2 id="example">Example<a class="header-anchor" href="javascript:;" onclick="location.hash='#example'" aria-label="Permalink">&ZeroWidthSpace;</a></h2>
-<p>The largest website generated with Razor Press is currently the new ServiceStack documentation at
+<p>The largest website generated with Razor Press is currently the ServiceStack's documentation at
 <a href="https://docs.servicestack.net">docs.servicestack.net</a>:</p>
 <div class="not-prose mt-8 grid grid-cols-2 gap-4">
     <a class="block group border dark:border-gray-800 hover:border-indigo-700 dark:hover:border-indigo-700" href="https://docs2.servicestack.net">
@@ -313,7 +313,7 @@ add any Markdig pipeline extensions or custom containers using <code>MarkdigConf
         <div class="bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-300 font-semibold group-hover:bg-indigo-700 group-hover:text-white text-center py-2">docs.servicestack.net</div>
     </a>
 </div>
-<p>A large <strong>500+</strong> pages documentation website ported from VitePress, which prompted the creation of Razor Press after
+<p>A <strong>500+</strong> pages documentation website ported from VitePress, which prompted the creation of Razor Press after
 experiencing issues with VitePress's SSR/SPA model whose workaround became too time consuming to maintain.</p>
 <p>The new Razor SSG implementation now benefits from Razor Pages flexible layouts and partials where pages can be optionally
 implemented in just markdown, Razor or a hybrid mix of both. The <a href="/vue/">Vue</a> splash page is an example of this implemented in a custom
