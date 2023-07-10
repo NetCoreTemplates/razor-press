@@ -26,7 +26,7 @@ Some examples built with Razor SSG include:
 
 <div class="not-prose mt-8 grid grid-cols-2 gap-4">
     <a class="block group border dark:border-gray-800 hover:border-indigo-700 dark:hover:border-indigo-700 flex flex-col justify-between" href="https://servicestack.net">
-        <img class="p-2" src="https://docs2.servicestack.net/img/pages/ssg/servicestack.net-home-1440.png">
+        <img class="p-2" src="https://docs.servicestack.net/img/pages/ssg/servicestack.net-home-1440.png">
         <div class="bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-300 font-semibold group-hover:bg-indigo-700 group-hover:text-white text-center py-2">servicestack.net</div>
     </a>
     <a class="block group border dark:border-gray-800 hover:border-indigo-700 dark:hover:border-indigo-700" href="https://diffusion.works">
@@ -35,11 +35,11 @@ Some examples built with Razor SSG include:
         <div class="bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-300 font-semibold group-hover:bg-indigo-700 group-hover:text-white text-center py-2">diffusion.works</div>
     </a>
     <a class="block group border dark:border-gray-800 hover:border-indigo-700 dark:hover:border-indigo-700" href="https://jamstacks.net">
-        <img class="p-2" src="https://docs2.servicestack.net/img/pages/release-notes/v6.9/jamstacks-screenshot.png">
+        <img class="p-2" src="https://docs.servicestack.net/img/pages/release-notes/v6.9/jamstacks-screenshot.png">
         <div class="bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-300 font-semibold group-hover:bg-indigo-700 group-hover:text-white text-center py-2">jamstacks.net</div>
     </a>
     <a class="block group border dark:border-gray-800 hover:border-indigo-700 dark:hover:border-indigo-700" href="https://xkcd.netcore.io">
-        <img class="p-2" src="https://docs2.servicestack.net/img/pages/release-notes/v6.9/xkcd-screenshot.png">
+        <img class="p-2" src="https://docs.servicestack.net/img/pages/release-notes/v6.9/xkcd-screenshot.png">
         <div class="bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-300 font-semibold group-hover:bg-indigo-700 group-hover:text-white text-center py-2">xkcd.netcore.io</div>
     </a>
 </div>
@@ -105,8 +105,8 @@ The largest website generated with Razor Press is currently the ServiceStack's d
 [docs.servicestack.net](https://docs.servicestack.net):
 
 <div class="not-prose mt-8 grid grid-cols-2 gap-4">
-    <a class="block group border dark:border-gray-800 hover:border-indigo-700 dark:hover:border-indigo-700" href="https://docs2.servicestack.net">
-        <img class="p-2" src="https://docs2.servicestack.net/img/pages/ssg/docs.servicestack.net.png">
+    <a class="block group border dark:border-gray-800 hover:border-indigo-700 dark:hover:border-indigo-700" href="https://docs.servicestack.net">
+        <img class="p-2" src="https://docs.servicestack.net/img/pages/ssg/docs.servicestack.net.png">
         <div class="bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-300 font-semibold group-hover:bg-indigo-700 group-hover:text-white text-center py-2">docs.servicestack.net</div>
     </a>
 </div>
@@ -120,7 +120,7 @@ implemented in just markdown, Razor or a hybrid mix of both. The [Vue](/vue/) sp
 
 <div class="not-prose mt-8 grid grid-cols-2 gap-4">
     <a class="block group border dark:border-gray-800 hover:border-indigo-700 dark:hover:border-indigo-700" href="/vue/">
-        <img class="p-2" src="https://docs2.servicestack.net/img/pages/ssg/razor-pages-vue.png">
+        <img class="p-2" src="https://docs.servicestack.net/img/pages/ssg/razor-pages-vue.png">
         <div class="bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-300 font-semibold group-hover:bg-indigo-700 group-hover:text-white text-center py-2">docs.servicestack.net</div>
     </a>
 </div>
