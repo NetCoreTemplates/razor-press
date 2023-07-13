@@ -8,7 +8,7 @@ The **Manage Posts** section provides editable [AutoQuery Grid components](https
 to manage all the RDBMS tables used to implement CreatorKit's comment system like **Threads** which manages the `Thread` 
 table which supports adding Thread comments to every unique URL:
 
-![](/img/pages/creatorkit/portal-threads.png)
+![](https://servicestack.net/img/pages/creatorkit/portal-threads.png)
 
 ## Moderation
 
@@ -20,9 +20,9 @@ a comment ranging from flagging a comment which marks the comment as flagged and
 the comment which also deletes any replies, temporarily banning the user for a day, a week, a month to permanently
 banning the user until they're explicitly unbanned:
 
-![](/img/pages/creatorkit/portal-report.png)
+![](https://servicestack.net/img/pages/creatorkit/portal-report.png)
 
 Thread Users are managed with the [User Admin Feature](https://docs.servicestack.net/admin-ui-users) UI who can be
 banned for any duration up to **Ban Until Date** or permanently banned by Locking the User Account:
 
-![](/img/pages/creatorkit/admin-users.png)
+![](https://servicestack.net/img/pages/creatorkit/admin-users.png)

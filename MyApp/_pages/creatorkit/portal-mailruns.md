@@ -8,7 +8,7 @@ Mail Runs is where you would go to craft and send emails to an entire Mailing Li
 Markdown and Custom HTML Email UIs as [Messages](creatorkit/portal-messages) except instead of a single contact, 
 it will generate and send individual emails to every contact in the specified **Mailing List**:
 
-![](/img/pages/creatorkit/portal-mailrun-custom.png)
+![](https://servicestack.net/img/pages/creatorkit/portal-mailrun-custom.png)
 
 You'll also be able to send personalized emails with the contact's `{{Email}}`, `{{FirstName}}` and `{{LastName}}`
 template variables.
@@ -91,7 +91,7 @@ Creating a Mail Run generates messages for each Contact in the Mailing List, but
 it instead opens the saved Mail Run so you have an opportunity to inspect the generated messages to decide whether
 you want to send or delete the messages.
 
-![](/img/pages/creatorkit/portal-mailrun-newsletter-send.png)
+![](https://servicestack.net/img/pages/creatorkit/portal-mailrun-newsletter-send.png)
 
 Click **View Messages** to inspect a sample of the generated messages from the saved Mail Run then either 
 **Send Messages** if you want to send them out or **Delete** to delete the Mail Run and start again.
@@ -130,7 +130,7 @@ public class NewsletterMailRun : MailRunBase, IPost, IReturn<MailRunResponse>
 
 Which renders the **Generate Newsletter** UI: 
 
-![](/img/pages/creatorkit/portal-mailrun-newsletter.png)
+![](https://servicestack.net/img/pages/creatorkit/portal-mailrun-newsletter.png)
 
 The implementation follows the standard Mail Run implementation, using the `EmailRenderer` to creating a `MailMessageRun`
 for every contact in the mailing list. 

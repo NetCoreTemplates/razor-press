@@ -12,7 +12,7 @@ All information captured by CreatorKit's components can be managed from your Cre
 
 Signing in with an Admin User will take you to the dashboard showing your Website activity: 
 
-![](/img/pages/creatorkit/portal.png)
+![](https://servicestack.net/img/pages/creatorkit/portal.png)
 
 ## Mailing List Admin
 
@@ -24,14 +24,14 @@ to mailing list contacts,
 Mailing List Contacts can either be added via the [JoinMailingList](creatorkit/components#joinmailinglist) component
 on your website or using the Contacts Admin UI:
 
-![](/img/pages/creatorkit/portal-contacts.png)
+![](https://servicestack.net/img/pages/creatorkit/portal-contacts.png)
 
 ### Archive
 
 When you want to clear your workspace of sent emails you can archive them which moves them to a separate Database ensuring
 the current working database is always snappy and clear of clutter. 
 
-![](/img/pages/creatorkit/portal-archive.png)
+![](https://servicestack.net/img/pages/creatorkit/portal-archive.png)
 
 ## Posts Admin
 

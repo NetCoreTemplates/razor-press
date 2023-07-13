@@ -183,7 +183,7 @@ This effectively makes form validation binding a transparent detail where all `@
 Input Components are able to automatically apply contextual validation errors next to the fields they apply to: 
 
 <div class="my-8">
-  <img class="mx-auto max-w-2xl" src="/img/pages/scripts/edit-contact-validation.png">
+  <img class="mx-auto max-w-2xl" src="https://servicestack.net/img/pages/scripts/edit-contact-validation.png">
 </div>
 
 ## Example using apiForm

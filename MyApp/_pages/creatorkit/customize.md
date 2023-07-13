@@ -87,7 +87,7 @@ You're free to add to these existing collections or create new variable collecti
 `{{info.*}}` and `{{urls.*}}` in your templates that's also available via dropdown in the Markdown Editor Variables
 dropdown:
 
-![](/img/pages/creatorkit/markdown-vars.png)
+![](https://servicestack.net/img/pages/creatorkit/markdown-vars.png)
 
 In addition, a `{{images.*}}` variable collection is also populated from all images in the `/img/mail` folder, e.g:
 

@@ -9,7 +9,7 @@ group: Portal
 **Messages** lets you craft and send emails to a single contact which can be sent immediately or saved as a draft so
 you can review the HTML rendered email and send later.
 
-![](/img/pages/creatorkit/portal-messages.png)
+![](https://servicestack.net/img/pages/creatorkit/portal-messages.png)
 
 It also lists all available emails that can be sent which are any APIs that inherit the `CreateEmailBase` base class
 which contains the minimum contact fields required in each email:
@@ -53,7 +53,7 @@ public class SimpleTextEmail : CreateEmailBase, IPost, IReturn<MailMessage>
 Which are rendered using the [Vue AutoForm component](https://docs.servicestack.net/vue/gallery/autoform) from the API
 definition where the `SimpleTextEmail` Request DTO renders the new Email UI:
 
-![](/img/pages/creatorkit/portal-messages-simple.png)
+![](https://servicestack.net/img/pages/creatorkit/portal-messages-simple.png)
 
 Which uses the custom `EmailInput` component to search for contacts and populates their Email, First and Last name fields.
 
@@ -136,7 +136,7 @@ public class CustomHtmlEmail : CreateEmailBase, IPost, IReturn<MailMessage>
 }
 ```
 
-![](/img/pages/creatorkit/portal-messages-custom.png)
+![](https://servicestack.net/img/pages/creatorkit/portal-messages-custom.png)
 
 #### Custom HTML Implementation
 
@@ -222,7 +222,7 @@ for authoring Markdown content with icons to assist with discovery of Markdown's
 
 The editor also includes a dropdown to provide convenient access to your [Template Variables](creatorkit/customize#template-variables):
 
-![](/img/pages/creatorkit/portal-messages-markdown.png)
+![](https://servicestack.net/img/pages/creatorkit/portal-messages-markdown.png)
 
 The implementation of `MarkdownEmail` just sends a Custom HTML Email configured to use the **basic** Layout with the **empty** Email Template:
 

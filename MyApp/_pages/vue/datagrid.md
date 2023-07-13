@@ -301,6 +301,6 @@ Declaratively annotating your DTOs with preferred formatting hints makes this ri
 it's used to enhance ServiceStack's built-in UI's and Components like:
 
  - [API Explorer](/api-explorer)
- - [Locode](/locode/)
+ - [Locode](https://docs.servicestack.net/locode/)
  - [Blazor Tailwind Components](/templates/blazor-components)
 

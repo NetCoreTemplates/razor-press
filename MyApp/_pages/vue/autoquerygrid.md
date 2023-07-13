@@ -320,7 +320,7 @@ Edit Form for Authorized Users, implemented with:
 Which loads the [AuditEvents.mjs](https://github.com/ServiceStack/ServiceStack/blob/main/ServiceStack/src/ServiceStack/modules/locode/components/AuditEvents.mjs)
 component at the bottom of **Edit** forms, allowing Admin Users to inspect the Audit History of each record:
 
-[![](/img/pages/vue/audit-history-job.png)](/locode/auditing)
+[![](https://servicestack.net/img/pages/vue/audit-history-job.png)](/locode/auditing)
 
 Alternatively you can replace the entire Create and Edit Forms used with the `createform` and `editforms` slots:
 
@@ -406,7 +406,7 @@ defineEmits<{
 
 ## Powers Locode
 
-AutoQueryGrid is already used extensively and is the key component that enables [Locode's](/locode/) Instant Auto UI to manage your App's 
+AutoQueryGrid is already used extensively and is the key component that enables [Locode's](https://docs.servicestack.net/locode/) Instant Auto UI to manage your App's 
 AutoQuery CRUD APIs.
 
-[![](/img/pages/vue/blazor-gallery-contact.png)](/locode/)
+[![](https://servicestack.net/img/pages/vue/blazor-gallery-contact.png)](https://docs.servicestack.net/locode/)

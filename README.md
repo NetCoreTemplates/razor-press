@@ -16,10 +16,6 @@ Alternatively write new project files directly into an razor-press repository, u
     $ cd <ProjectName>
     $ x new razor-press
 
-## Documentation
-
-Documentation for this template is included at [/posts/razor-press](https://razor-press.web-templates.io/posts/razor-press).
-
 ## Development Tasks
 
 Tasks to run live reload Tailwind and .NET Razor Pages App during development:
