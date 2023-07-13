@@ -1,24 +1,24 @@
-# razor-ssg
+# razor-press
 
-.NET 6.0 razor-ssg Static Generated Razor Pages Project Template
+.NET 6.0 razor-press Static Generated Razor Pages Project Template
 
-[![](https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/razor-ssg.png)](https://razor-ssg.web-templates.io)
+[![](https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/razor-press.png)](https://razor-press.web-templates.io)
 
-> Browse [source code](https://github.com/NetCoreTemplates/razor-ssg), view live demo [razor-ssg.web-templates.io](https://razor-ssg.web-templates.io) and install with [dotnet-new](https://docs.servicestack.net/dotnet-new):
+> Browse [source code](https://github.com/NetCoreTemplates/razor-press), view live demo [razor-press.web-templates.io](https://razor-press.web-templates.io) and install with [dotnet-new](https://docs.servicestack.net/dotnet-new):
 
     $ dotnet tool install -g x
 
-    $ x new razor-ssg ProjectName
+    $ x new razor-press ProjectName
 
-Alternatively write new project files directly into an razor-ssg repository, using the Directory Name as the ProjectName:
+Alternatively write new project files directly into an razor-press repository, using the Directory Name as the ProjectName:
 
     $ git clone https://github.com/<User>/<ProjectName>.git
     $ cd <ProjectName>
-    $ x new razor-ssg
+    $ x new razor-press
 
 ## Documentation
 
-Documentation for this template is included at [/posts/razor-ssg](https://razor-ssg.web-templates.io/posts/razor-ssg).
+Documentation for this template is included at [/posts/razor-press](https://razor-press.web-templates.io/posts/razor-press).
 
 ## Development Tasks
 
