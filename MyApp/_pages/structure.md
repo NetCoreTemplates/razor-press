@@ -67,9 +67,9 @@ index and content pages, e.g:
 
 Which are used to render all pages in each documentation collection:
 
-- [docs2.servicestack.net/autoquery/](https://docs.servicestack.net/autoquery/)
-- [docs2.servicestack.net/ormlite/](https://docs.servicestack.net/ormlite/)
-- [docs2.servicestack.net/redis/](https://docs.servicestack.net/redis/)
+- [docs.servicestack.net/autoquery/](https://docs.servicestack.net/autoquery/)
+- [docs.servicestack.net/ormlite/](https://docs.servicestack.net/ormlite/)
+- [docs.servicestack.net/redis/](https://docs.servicestack.net/redis/)
 
 ::: tip
 See [Sidebars](/sidebars) for how to configure different Sidebar menus for each collection
