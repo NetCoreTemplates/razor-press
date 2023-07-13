@@ -209,7 +209,7 @@ Creator Kit                                    </span>
                     <p>Mail Runs is where you would go to craft and send emails to an entire Mailing List group. It has the same Simple,
 Markdown and Custom HTML Email UIs as <a href="creatorkit/portal-messages">Messages</a> except instead of a single contact,
 it will generate and send individual emails to every contact in the specified <strong>Mailing List</strong>:</p>
-<p><img src="/img/pages/creatorkit/portal-mailrun-custom.png" alt="" /></p>
+<p><img src="https://servicestack.net/img/pages/creatorkit/portal-mailrun-custom.png" alt="" /></p>
 <p>You'll also be able to send personalized emails with the contact's <code>{‎{Email}‎}</code>, <code>{‎{FirstName}‎}</code> and <code>{‎{LastName}‎}</code>
 template variables.</p>
 <h3 id="mailrun-implementation">MailRun Implementation<a class="header-anchor" href="javascript:;" onclick="location.hash='#mailrun-implementation'" aria-label="Permalink">&ZeroWidthSpace;</a></h3>
@@ -278,7 +278,7 @@ and sent per contact and are instead generated and saved to the <code>MailMessag
 <p>Creating a Mail Run generates messages for each Contact in the Mailing List, but doesn't send them immediately,
 it instead opens the saved Mail Run so you have an opportunity to inspect the generated messages to decide whether
 you want to send or delete the messages.</p>
-<p><img src="/img/pages/creatorkit/portal-mailrun-newsletter-send.png" alt="" /></p>
+<p><img src="https://servicestack.net/img/pages/creatorkit/portal-mailrun-newsletter-send.png" alt="" /></p>
 <p>Click <strong>View Messages</strong> to inspect a sample of the generated messages from the saved Mail Run then either
 <strong>Send Messages</strong> if you want to send them out or <strong>Delete</strong> to delete the Mail Run and start again.</p>
 <p>Whilst the Mail Run Messages are being sent out you can click Refresh to monitor progress.</p>
@@ -305,7 +305,7 @@ public class NewsletterMailRun : MailRunBase, IPost, IReturn&lt;MailRunResponse&
 }
 </code></pre>
 <p>Which renders the <strong>Generate Newsletter</strong> UI:</p>
-<p><img src="/img/pages/creatorkit/portal-mailrun-newsletter.png" alt="" /></p>
+<p><img src="https://servicestack.net/img/pages/creatorkit/portal-mailrun-newsletter.png" alt="" /></p>
 <p>The implementation follows the standard Mail Run implementation, using the <code>EmailRenderer</code> to creating a <code>MailMessageRun</code>
 for every contact in the mailing list.</p>
 <p>We can also see it will default to the current Month/Year if not provided and that it uses the

@@ -209,7 +209,7 @@ Creator Kit                                    </span>
                     <h3 id="sending-single-plain-text-emails">Sending Single plain-text Emails<a class="header-anchor" href="javascript:;" onclick="location.hash='#sending-single-plain-text-emails'" aria-label="Permalink">&ZeroWidthSpace;</a></h3>
 <p><strong>Messages</strong> lets you craft and send emails to a single contact which can be sent immediately or saved as a draft so
 you can review the HTML rendered email and send later.</p>
-<p><img src="/img/pages/creatorkit/portal-messages.png" alt="" /></p>
+<p><img src="https://servicestack.net/img/pages/creatorkit/portal-messages.png" alt="" /></p>
 <p>It also lists all available emails that can be sent which are any APIs that inherit the <code>CreateEmailBase</code> base class
 which contains the minimum contact fields required in each email:</p>
 <pre><code class="language-csharp">public abstract class CreateEmailBase
@@ -244,7 +244,7 @@ public class SimpleTextEmail : CreateEmailBase, IPost, IReturn&lt;MailMessage&gt
 <h3 id="email-ui">Email UI<a class="header-anchor" href="javascript:;" onclick="location.hash='#email-ui'" aria-label="Permalink">&ZeroWidthSpace;</a></h3>
 <p>Which are rendered using the <a href="https://docs.servicestack.net/vue/gallery/autoform">Vue AutoForm component</a> from the API
 definition where the <code>SimpleTextEmail</code> Request DTO renders the new Email UI:</p>
-<p><img src="/img/pages/creatorkit/portal-messages-simple.png" alt="" /></p>
+<p><img src="https://servicestack.net/img/pages/creatorkit/portal-messages-simple.png" alt="" /></p>
 <p>Which uses the custom <code>EmailInput</code> component to search for contacts and populates their Email, First and Last name fields.</p>
 <p>The implementation for sending single emails are defined in
 <a href="https://github.com/NetCoreApps/CreatorKit/blob/main/CreatorKit.ServiceInterface/EmailServices.cs">EmailServices.cs</a>
@@ -312,7 +312,7 @@ public class CustomHtmlEmail : CreateEmailBase, IPost, IReturn&lt;MailMessage&gt
     public bool? Draft { get; set; }
 }
 </code></pre>
-<p><img src="/img/pages/creatorkit/portal-messages-custom.png" alt="" /></p>
+<p><img src="https://servicestack.net/img/pages/creatorkit/portal-messages-custom.png" alt="" /></p>
 <h4 id="custom-html-implementation">Custom HTML Implementation<a class="header-anchor" href="javascript:;" onclick="location.hash='#custom-html-implementation'" aria-label="Permalink">&ZeroWidthSpace;</a></h4>
 <p>It follows the same pattern as other email implementations where it uses the <code>EmailRenderer</code> to create and send emails:</p>
 <pre><code class="language-csharp">public async Task&lt;object&gt; Any(CustomHtmlEmail request)
@@ -381,7 +381,7 @@ public class MarkdownEmail : CreateEmailBase, IPost, IReturn&lt;MailMessage&gt;
 for authoring Markdown content with icons to assist with discovery of Markdown's different formatting syntax.</p>
 <h4 id="template-variables">Template Variables<a class="header-anchor" href="javascript:;" onclick="location.hash='#template-variables'" aria-label="Permalink">&ZeroWidthSpace;</a></h4>
 <p>The editor also includes a dropdown to provide convenient access to your <a href="creatorkit/customize#template-variables">Template Variables</a>:</p>
-<p><img src="/img/pages/creatorkit/portal-messages-markdown.png" alt="" /></p>
+<p><img src="https://servicestack.net/img/pages/creatorkit/portal-messages-markdown.png" alt="" /></p>
 <p>The implementation of <code>MarkdownEmail</code> just sends a Custom HTML Email configured to use the <strong>basic</strong> Layout with the <strong>empty</strong> Email Template:</p>
 <pre><code class="language-csharp">public async Task&lt;object&gt; Any(MarkdownEmail request)
 {
