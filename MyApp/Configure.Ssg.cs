@@ -46,8 +46,7 @@ public class ConfigureSsg : IHostingStartup
                 var videos = appHost.Resolve<MarkdownVideos>();
                 var meta = appHost.Resolve<MarkdownMeta>();
 
-                meta.Features = new() { pages, whatsNew, videos };
-                meta.Features.ForEach(x => x.VirtualFiles = appHost.VirtualFiles);
+                meta.Features = [pages, whatsNew, videos];
                 
                 pages.LoadFrom("_pages");
                 whatsNew.LoadFrom("_whatsnew");
