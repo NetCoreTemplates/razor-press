@@ -17,6 +17,7 @@ public class ConfigureSsg : IHostingStartup
             context.Configuration.GetSection(nameof(AppConfig)).Bind(AppConfig.Instance);
             services.AddSingleton(AppConfig.Instance);
             services.AddSingleton<RazorPagesEngine>();
+            services.AddSingleton<MarkdownIncludes>();
             services.AddSingleton<MarkdownPages>();
             services.AddSingleton<MarkdownWhatsNew>();
             services.AddSingleton<MarkdownVideos>();
@@ -41,6 +42,7 @@ public class ConfigureSsg : IHostingStartup
                     }
                 });
 
+                var includes = appHost.Resolve<MarkdownIncludes>();
                 var pages = appHost.Resolve<MarkdownPages>();
                 var whatsNew = appHost.Resolve<MarkdownWhatsNew>();
                 var videos = appHost.Resolve<MarkdownVideos>();
@@ -48,6 +50,7 @@ public class ConfigureSsg : IHostingStartup
 
                 meta.Features = [pages, whatsNew, videos];
                 
+                includes.LoadFrom("_includes");
                 pages.LoadFrom("_pages");
                 whatsNew.LoadFrom("_whatsnew");
                 videos.LoadFrom("_videos");

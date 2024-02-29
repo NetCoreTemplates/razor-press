@@ -198,7 +198,7 @@ Markdown Fragments can be included inside other markdown documents with the `::i
 :::
 
 Where it will be replaced with the HTML rendered markdown contents of markdown fragments maintained in `_pages/_include`, 
-which in this case embeds the rendered contents of [_pages/_include/vue/formatters.md](https://github.com/NetCoreTemplates/razor-press/blob/main/MyApp/_pages/_include/vue/formatters.md).
+which in this case embeds the rendered contents of [_include/vue/formatters.md](https://github.com/NetCoreTemplates/razor-press/blob/main/MyApp/_include/vue/formatters.md).
 
 ### Include Markdown in Razor Pages
 

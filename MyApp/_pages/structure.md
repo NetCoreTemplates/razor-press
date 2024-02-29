@@ -22,11 +22,12 @@ The pages feature simply makes all pages in the **_pages** folder, available fro
 
 Where the included pages:
 
-<file-layout :files="{
-  _pages: {
-    _: ['what-is-razor-press.md','structure.md','privacy.md'],
-  }
-}" class="cursor-pointer" v-on:click="nav('https://github.com/NetCoreTemplates/razor-press/tree/main/MyApp/_pages')"></file-layout>
+```files
+/_pages
+  what-is-razor-press.md
+  structure.md
+  privacy.md    
+```
 
 Are made available from:
 
@@ -40,12 +41,17 @@ This is primarily where most Markdown documentation will be maintained.
 
 Folders can be used to maintain different document collections as seen in [/vue/](/vue/) and [/creatorkit/](/creatorkit/) folders: 
 
-<file-layout :files="{
-  _pages: {
-    creatorkit: { _: ['about.md','components.md','customize.md'], },
-    vue:        { _: ['alerts.md','autocomplete.md','autoform.md'], },
-  }
-}" class="cursor-pointer" v-on:click="nav('https://github.com/NetCoreTemplates/razor-press/tree/main/MyApp/_pages')"></file-layout>
+```files
+/_pages
+  /creatorkit
+    about.md
+    components.md
+    customize.md
+  /vue
+    alerts.md
+    autocomplete.md
+    autoform.md
+```
 
 Each documentation collection needs a Razor Page to render each page in that collection, which can be configured independently
 and include additional features when needed, examples of this include:
@@ -88,13 +94,15 @@ The [/whatsnew](/whatsnew) page is an example of creating a custom Markdown feat
 where a new folder is created per release, containing both release date and release or project name, with all features in that release
 maintained markdown content sorted in alphabetical order:
 
-<file-layout :files="{
-  _whatsnew: {
-    '2023-03-08_Animaginary': { _: ['feature1.md'] },
-    '2023-03-18_OpenShuttle': { _: ['feature1.md'] },
-    '2023-03-28_Planetaria':  { _: ['feature1.md'] },
-  }
-}" class="cursor-pointer" v-on:click="nav('https://github.com/NetCoreTemplates/razor-press/tree/main/MyApp/_whatsnew')"></file-layout>
+```files
+/_whatsnew
+  /2023-03-08_Animaginary
+    feature1.md
+  /2023-03-18_OpenShuttle
+    feature1.md
+  /2023-03-28_Planetaria
+    feature1.md    
+```
 
 What's New follows the same structure as Pages feature which is loaded in:
 
@@ -108,12 +116,15 @@ and rendered in:
 Videos is another Markdown powered feature for display collections of YouTube videos populated from a Directory of Markdown Video
 pages in [/_videos](https://github.com/NetCoreTemplates/razor-press/tree/main/MyApp/_videos):
 
-<file-layout :files="{
-  _videos: {
-    projects: { _: ['video1.md','video2.md'] },
-    vue:      { _: ['video1.md','video2.md'] },
-  }
-}" class="cursor-pointer" v-on:click="nav('https://github.com/NetCoreTemplates/razor-press/tree/main/MyApp/_videos')"></file-layout>
+```files
+/_videos
+  /projects
+    video1.md
+    video2.md
+  /vue
+    video1.md
+    video2.md
+```
 
 Loaded with:
  
@@ -133,14 +144,24 @@ data structures along with the pre-rendered website at deployment.
 This capability is provided by the new [Markdown.Meta.cs](https://github.com/NetCoreTemplates/razor-ssg/blob/main/MyApp/Markdown.Meta.cs) 
 feature which generates multiple projections of the Markdown metadata for each type of content added in every year, e.g:
 
-<file-layout :files="{
-  meta: {
-    2021: { _: ['all.json','posts.json','videos.json'] },
-    2022: { _: ['all.json','posts.json'] },
-    2023: { _: ['all.json','pages.json','posts.json','videos.json','whatsnew.json'] },
-    _: ['all.json','index.json']
-  }
-}" class="mb-8 cursor-pointer" v-on:click="nav('https://github.com/NetCoreTemplates/razor-ssg/tree/gh-pages/meta')"></file-layout>
+```files
+/meta
+  /2021
+    all.json
+    posts.json
+    videos.json
+  /2022
+    all.json
+    posts.json
+  /2023
+    all.json
+    pages.json
+    posts.json
+    videos.json
+    whatsnew.json
+  all.json
+  index.json    
+```
 
 With this you can fetch the metadata of all the new **Blog Posts** added in **2023** from:
 
