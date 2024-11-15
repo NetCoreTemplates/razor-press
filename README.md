@@ -1,6 +1,6 @@
 # razor-press
 
-.NET 6.0 razor-press Static Generated Razor Pages Project Template
+.NET 8.0 razor-press Static Generated Razor Pages Project Template
 
 [![](https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/razor-press.png)](https://razor-press.web-templates.io)
 
