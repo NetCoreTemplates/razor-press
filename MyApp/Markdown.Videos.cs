@@ -1,4 +1,4 @@
-﻿// BSD License: https://docs.servicestack.net/BSD-LICENSE.txt
+// BSD License: https://docs.servicestack.net/BSD-LICENSE.txt
 // run node postinstall.js to update to latest version
 using ServiceStack.IO;
 
