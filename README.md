@@ -1,10 +1,10 @@
 # razor-press
 
-.NET 8.0 razor-press Static Generated Razor Pages Project Template
+.NET 10.0 razor-press Static Generated Razor Pages Project Template
 
 [![](https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/razor-press.png)](https://razor-press.web-templates.io)
 
-> Browse [source code](https://github.com/NetCoreTemplates/razor-press), view live demo [razor-press.web-templates.io](https://razor-press.web-templates.io) and install with [dotnet-new](https://docs.servicestack.net/dotnet-new):
+> Browse [source code](https://github.com/NetCoreTemplates/razor-press), view live demo [razor-press.web-templates.io](https://razor-press.web-templates.io):
 
     $ dotnet tool install -g x
 
