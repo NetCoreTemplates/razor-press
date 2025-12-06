@@ -43,7 +43,7 @@ export default {
     </div>`,
     props: { template:String },
     setup(props) {
-        const project = ref('ProjectName')
+        const project = ref('MyApp')
 
         const projectZip = computed(() => (project.value || 'MyApp') + '.zip')
 
