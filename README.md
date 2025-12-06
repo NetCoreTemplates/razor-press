@@ -6,15 +6,13 @@
 
 > Browse [source code](https://github.com/NetCoreTemplates/razor-press), view live demo [razor-press.web-templates.io](https://razor-press.web-templates.io):
 
-    $ dotnet tool install -g x
+```bash
+npx create-net razor-press ProjectName
+```
 
-    $ x new razor-press ProjectName
+## Jumpstart with Copilot
 
-Alternatively write new project files directly into an razor-press repository, using the Directory Name as the ProjectName:
-
-    $ git clone https://github.com/<User>/<ProjectName>.git
-    $ cd <ProjectName>
-    $ x new razor-press
+Instantly [scaffold a new App with this template](https://github.com/new?template_name=razor-press&template_owner=NetCoreTemplates) using GitHub Copilot, just describe the features you want and watch Copilot build it!
 
 ## Development Tasks
 
